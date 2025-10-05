@@ -53,4 +53,4 @@ jobs:
         with:
           context: ./front-end-app # El working directory
           push: true
-          tags: ghcr.io/${{ env.OWNER  }}/c-cd-trp:latest # Añadimos el tag de la imagen apuntando al registry de Github
+          tags: ghcr.io/${{ vars.OWNER  }}/c-cd-trp:latest # Añadimos el tag de la imagen apuntando al registry de Github
