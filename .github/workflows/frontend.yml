@@ -48,14 +48,9 @@ jobs:
           username: ${{ github.actor }} # El usuario de Github
           password: ${{ secrets.GITHUB_TOKEN }} # El token de Github que ya viene por defecto en los secrets
 
-      - name: set lower case owner name
-        run: |
-          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
-        env:
-          OWNER: "${{ github.OWNER }}"
       - name: Build Docker Image
         uses: docker/build-push-action@v5 # Utilizamos la acción de build y push de docker del marketplace. Esto hace el docker build y el docker push por debajo
         with:
           context: ./front-end-app # El working directory
           push: true
-          tags: ghcr.io/${{ github.OWNER_LC  }}/c-cd-trp:latest # Añadimos el tag de la imagen apuntando al registry de Github
+          tags: ghcr.io/${{ github.OWNER  }}/c-cd-trp:latest # Añadimos el tag de la imagen apuntando al registry de Github
