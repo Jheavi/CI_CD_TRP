@@ -27,6 +27,7 @@ jobs:
 
       - name: Build
         run: npm run build
+
       - name: Lint
         run: npm run ci:lint # Ejecuta el comando npm run ci:lint de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el linter que estemos usando, en este caso ESlint
 
